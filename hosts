@@ -1,0 +1,4 @@
+# Substitua os valores abaixo pelos dados do seu servidor.
+
+[docker_server]
+meuservidor ansible_host=89.116.30.191 ansible_user=root

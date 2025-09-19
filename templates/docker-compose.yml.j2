@@ -1,0 +1,17 @@
+# Template Jinja2 para o docker-compose do Portainer
+version: '3.8'
+
+services:
+  {{ app_name }}:
+    image: portainer/portainer-ce:latest
+    container_name: {{ app_name }}
+    restart: always
+    ports:
+      - "{{ portainer_https_port }}:9443"
+      - "{{ portainer_agent_port }}:8000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - {{ app_name }}_data:/data
+
+volumes:
+  {{ app_name }}_data:
